@@ -1,3 +1,4 @@
+using MediatR;
 using VectorSearch.API.Middleware;
 using VectorSearch.Application.Commands.IndexDocument;
 using VectorSearch.Domain.Interfaces;
@@ -17,8 +18,7 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-builder.Services.AddMediatR(cfg =>
-    cfg.RegisterServicesFromAssembly(typeof(IndexDocumentCommand).Assembly));
+builder.Services.AddMediatR(typeof(IndexDocumentCommand).Assembly);
 
 builder.Services.AddInfrastructure(builder.Configuration);
 

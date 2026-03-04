@@ -9,7 +9,7 @@ public class QdrantVectorRepository : IVectorRepository
 {
     private readonly QdrantClient _client;
     private const string CollectionName = "documents";
-    private const ulong VectorSize = 768;
+    private const ulong VectorSize = 3072;
     
     public QdrantVectorRepository(QdrantClient client)
     {

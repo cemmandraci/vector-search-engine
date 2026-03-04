@@ -12,7 +12,7 @@ public class GeminiEmbeddingService : IEmbeddingService
     private readonly string _apiKey;
     private readonly JsonSerializerOptions _jsonOptions;
 
-    private const string EmbeddingModel = "text-embedding-004";
+    private const string EmbeddingModel = "gemini-embedding-001";
     
     public GeminiEmbeddingService(
         IHttpClientFactory httpClientFactory,
@@ -53,7 +53,7 @@ public class GeminiEmbeddingService : IEmbeddingService
         return result.Embedding.Values;
     }
 
-    public async Task<IReadOnlyList<float[]>> GenerateEmbeddingAsync(IReadOnlyList<string> texts, CancellationToken cancellationToken = default)
+    public async Task<IReadOnlyList<float[]>> GenerateEmbeddingsAsync(IReadOnlyList<string> texts, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient("Gemini");
         
@@ -79,6 +79,6 @@ public class GeminiEmbeddingService : IEmbeddingService
                          responseBody, _jsonOptions)
                      ?? throw new InvalidOperationException("Could not parse batch embedding response.");
 
-        return result.Embeddings.Select(e => e.Embedding.Values).ToList();
+        return result.Embeddings.Select(e => e.Values).ToList();
     }
 }

@@ -12,5 +12,6 @@ public class EmbeddingValues
 
 public class GeminiBatchEmbeddingResponse
 {
-    public List<GeminiEmbeddingResponse> Embeddings { get; init; } = [];
+    // "embeddings" olmalı, "Embeddings" property adı JSON ile eşleşmeli
+    public List<EmbeddingValues> Embeddings { get; init; } = [];
 }

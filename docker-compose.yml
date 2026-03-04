@@ -18,3 +18,5 @@ services:
       - Qdrant__Port=6334
     depends_on:
       - qdrant
+volumes:
+  qdrant_storage:
