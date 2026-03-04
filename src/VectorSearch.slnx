@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="VectorSearch.API/VectorSearch.API.csproj" />
+  <Project Path="VectorSearch.Application/VectorSearch.Application.csproj" />
+  <Project Path="VectorSearch.Domain/VectorSearch.Domain.csproj" />
+  <Project Path="VectorSearch.Infrastructure/VectorSearch.Infrastructure.csproj" />
+</Solution>
