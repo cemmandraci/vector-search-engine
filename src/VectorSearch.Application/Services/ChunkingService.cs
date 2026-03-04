@@ -5,10 +5,10 @@ public class ChunkingService
     private readonly int _chunkSize;
     private readonly int _overlapSzie;
 
-    public ChunkingService(int chunkSize = 500, int overlapSzie = 50)
+    public ChunkingService(int chunkSize = 500, int overlapSize = 50)
     {
         _chunkSize = chunkSize;
-        _overlapSzie = overlapSzie;
+        _overlapSzie = overlapSize;
     }
 
     public IReadOnlyList<string> Chunk(string text)
